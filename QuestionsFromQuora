@@ -1,0 +1,650 @@
+links:
+https://java2blog.com/java-interview-questions/#Core_java_interview_questions
+https://www.quora.com/What-are-the-most-common-Java-interview-questions
+https://www.journaldev.com/2366/core-java-interview-questions-and-answers
+https://www.javatpoint.com/corejava-interview-questions
+https://www.edureka.co/blog/interview-questions/java-interview-questions/
+
+
+
+
+1.Why is Java termed as platform independent?
+
+Java is called as a platform independent language, as it is of the type “compile once and run anywhere”. So, a Java programmer does not need to compile a code each time he chooses a platform to execute it.
+
+2.What is JDK and what do you mean by JRE?
+
+It is a fact that most Java programmers get confused between the two. The “JDK” is the Java Development Kit. Which means, the JDK is bunch of software that provides you an environment to develop Java based software.
+
+The “JRE” on the other hand is the Java Runtime Environment. The JRE is a usage of the Java Virtual Machine which really executes Java programs.
+
+Normally, each JDK contains one (or more) JRE’s alongside the different tools for development like the Java source compilers, deploy tools, debuggers, libraries, and so on.
+
+Read Here: What’s New in JDK 8
+
+One of the basic Java interview questions.
+
+3.List the data types supported by Java
+
+Java supports the following data types:
+
+Byte – Value range is -128 to 127 inclusive.
+
+Short- 16 bit with a inclusive value range of -32,768 to 32,767.
+
+Int- 32 bit. Value range – -2,147,483,648 to 2,147,483,647 (inclusive).
+
+Long – 64 bit. -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807 (inclusive)
+
+Double and float
+
+4.What is static?
+
+In simple language, by using the static keyword, we can give a call to a method without creating an object to which it belongs. It belongs to the class and not it’s instance.
+
+5.Explain the concepts of Unboxing and Autoboxing
+
+Unboxing is the conversion of wrapper types into the primitive equivalent.
+
+Autoboxing – For easy compilation, the Java compiler converts the data types into object equivalent. This is termed as autoboxing.
+
+Why Java is Platform Independent? Is JVM platform Independent too?
+Difference between JVM and JRE?
+Write a code in java which shows multiple Inheritance?
+You are given a string "Ram is a good boy" write a program in java to print it like "yob doog a si maR"
+Difference between final, finally and finalize()
+Memory Management in Java. Who does it?
+How Garbage Collecter works?
+HashMap implementation , Bucket and Hashcode?
+Runtime Polymorphism vs Compile Time Polymorphism ( Static vs Dynamic Binding)
+Questions from String Class i.e. how String Literals are Stored (String Constant Pool)
+Difference between pointer and Reference?
+Exception Hierarchy.
+Thread and Process difference
+Consider following code
+int processNum(int num)
+{
+	return 			;//Line 1
+}
+what should I write in Line 1 so if I pass 23 method return 42 and If I pass 42 it will return 23 without using any other variable.
+
+15. How ArrayList and Vector Differes
+
+
+What is String constant pool in Java?
+How many objects are created in JVM when a String type variable is assigned using new keyword?
+How to create immutable class?
+Why String is immutable in Java?
+What is the difference between StringBuilder and StringBuffer?
+Why character array is preferred while storing password instead of String?
+What is the use of intern() method in java?
+Is String thread-safe?
+Where exactly string constant pool is located in the JVM?
+How substring method works in JDK 6 and JDK 7?
+
+Here are some questions which are most asked for experienced java programmers.You might find some of the questions very easy but believe me most developers failed to answer these questions.
+
+1. Guess the output of below program.
+
+package org.arpit.java2blog;
+class A
+{
+	void m1()
+	{
+		System.out.println("In m1 A");
+	}
+}
+class B extends A
+{
+	void m1()
+	{
+		System.out.println("In m1 B");
+	}
+	void m2()
+	{
+		System.out.println("In m2 B");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		A a=new B();
+		a.m2();
+	}
+}
+What will be the output?
+A. In m2 B
+B. Compile time error
+C. Runtime error
+
+Answer:
+
+B. Compile time error
+There will be compile time error.Even though we are assigning B’s object to A’s reference we can call only methods which are in A from A’s reference
+
+2. Guess the output of below program.
+
+package org.arpit.java2blog;
+class A
+{
+	void m1() throws ArrayIndexOutOfBoundsException
+	{
+		System.out.println("In m1 A");
+	}
+}
+class B extends A
+{
+	void m1() throws IndexOutOfBoundsException
+	{
+		System.out.println("In m1 B");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		A a=new B();
+		a.m1();
+	}
+}
+What will be the output?
+A. In m1 B
+B. Compile time error
+C. Runtime error
+
+Answer:
+
+A. In m1 B
+This will work fine as ArrayIndexOutOfBoundsException and IndexOutOfBoundsException are Runtime exceptions and there is no rule for runtime exceptions while method overriding.
+
+3. Guess the output of below program.
+
+package org.arpit.java2blog;
+import Buy & Sell Domain Names.IOException;
+class A
+{
+	void m1() throws IOException
+	{
+		System.out.println("In m1 A");
+	}
+}
+class B extends A
+{
+	void m1() throws Exception
+	{
+		System.out.println("In m1 B");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		A a=new B();
+		try {
+			a.m1();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+What will be the output?
+A. In m1 B
+B. Compile time error
+C. Runtime error
+
+Answer:
+
+B. Compile time error
+As IOException and Exception are checked exception, so you can not broaden the scope of Exception while method overriding.
+
+4. What will happen in case of below program?
+
+class A
+{
+	synchronized void m1()
+{
+		System.out.println("In m1 A");
+	}
+	void m2()
+	{
+		System.out.println("In m2 A");
+	}
+}
+There are two threads T1 and T2. T1 is accessing m1 method. Will T2 be able to access m2 method on the same instance at the same time?
+
+Answer:
+
+Yes, T2 will be able to access m2 as it does not require lock to access m2 method.
+
+5. What will happen in case of below program?
+
+class A
+{
+	synchronized void m1()
+	{
+		System.out.println("In m1 A");
+	}
+	synchronized void m2()
+	{
+		System.out.println("In m2 A");
+	}
+}
+There are two threads T1 and T2. T1 is accessing m1 method. Will T2 be able to access m2 method on the same instance at the same time?
+
+Answer:
+
+No, T2 will not be able to access m2 as it requires lock to access m2 method which is already taken by T1 thread.
+
+6. What will happen in case of below program?
+
+class A
+{
+	synchronized static void m1()
+	{
+		System.out.println("In m1 A");
+	}
+	synchronized void m2()
+	{		System.out.println("In m2 A");
+	}
+}
+There are two threads T1 and T2. T1 is accessing m1 method. Will T2 be able to access m2 method on the same instance at the same time?
+
+Answer:
+
+Yes, T2 will be able to access m2 as it requires object level lock to access m2 method and T1 thread has taken class level lock.You can read more about Object level lock vs Class level lock.
+
+7. Guess the output of below program.
+
+package org.arpit.java2blog;
+import java.util.HashSet;
+public class Customer {
+	String name;
+	int age;
+	Customer(String name,int age)
+	{
+		http://this.name=name;
+		this.age=age;
+	}
+	public static void main(String[] args) {
+		Customer c1= new Customer("John",20);
+		Customer c2= new Customer("John",20);
+		HashSet<Customer> customerSet=new HashSet<>();
+		customerSet.add(c1);
+		customerSet.add(c2);
+		System.out.println(customerSet.size());
+	}
+	// getters and setters
+}
+Answer:
+
+Output may be 1 or 2 as we did not implement hashcode and equals method in Customer class
+
+8. Guess the output of below program.
+
+package org.arpit.java2blog;
+public class Employee {
+	String name;
+	int age;
+	public Employee(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (age != other.age)
+			return false;
+		if (name == null) {
+			if (http://other.name != null)
+				return false;
+		} else if (!name.equals(http://other.name))
+			return false;
+		return true;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		http://this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}	
+}
+Main class
+
+package org.arpit.java2blog;
+import java.util.HashMap;
+import java.util.Map;
+public class HashMapMain {
+	public static void main(String[] args) {
+		Employee emp1=new Employee("Martin",27);
+		Map<Employee,String> hm=new HashMap<Employee,String>();
+		hm.put(emp1, "Verified");
+		emp1.setName("John");
+		System.out.println(hm.get(emp1));
+	}
+}
+Answer:
+
+We have implemented Employee’s hashcode and equals method using name and age attributes, so when you put emp1 as key in hashmap, it will use hashcode and equals method and will be put in HashMap.
+After putting emp1 in HashMop, we have changed name of the employee, so when you will try to retrieve element from HashMap using hm.get(emp1), you won’t be able to get object which we have put earlier and it will return null.
+
+9. How to decide young generation and old generation size for your application?
+
+It depends on nature of application.
+If you have lots of temporary objects then there will be lot of minor gc. You can provide arguments XX:NewRatio=1 to distribute 50% to young generation and 50% to old.
+By default, NewRatio=2 hence young Generation is 1/3 of total heap.
+Similarly, If you have too many long-lived objects, then you might need to increase size of tenure space by putting high value of NewRatio.
+
+10. What is garbage collection in java?
+
+Garbage collection is the process of identifying used and unused objects on java heap and removing unused object from the heap.
+A live object means object is still being referred to some part of program. Unused object means object is not being referred by any part of program and is eligible for garbage collection.
+Programmer does not have to do manual garbage collection like C or C++. Java takes care of
+
+11. What are types of garbage collectors in java?
+
+You can see detailed answer over here.
+
+12. What is difference between Collection.synchronizedMap(map) and ConcurrentHashMap?
+
+When you make map thread safe by using Collection.synchronizedMap(map), it locks whole map object, but ConcurrentHashMap does not lock the whole map, it just locks part of it(Segment).
+You can read more about ConcurrentHashMap over here.
+
+13. What will happen when you run below code
+
+package org.arpit.java2blog;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+public class IterateMapMain {
+	public static void main(String args[])
+	{
+		// HashMap with Country as key and capital as value
+		HashMap<String,String> map=new HashMap<String,String>();
+		map.put("India","Delhi");
+		map.put("Japan","Tokyo");
+		map.put("France","Paris");
+		map.put("Russia","Moscow");
+		// Iterating java iterator
+		System.out.println("Iterating java Iterator");
+		Iterator<String> countryKeySetIterator=map.keySet().iterator();
+		while(countryKeySetIterator.hasNext()){
+			String countryKey=countryKeySetIterator.next();
+			map.put("Nepal", "KathMandu");
+			System.out.println(countryKey);
+		}
+		System.out.println("-----------------------------");
+	}
+}
+Answer:
+
+You will get below output
+Iterating java IteratorException in thread “main” java.util.ConcurrentModificationException
+at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1489)
+at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1512)
+at org.arpit.java2blog.IterateMapMain.main(IterateMapMain.java:24)Japan
+Whenever you try to change count of hashmap while iterating, it will throw java.util.ConcurrentModificationException because we call iterator.next,it checks for modCount and initial count, if it does not match it will throw ConcurrentModificationException.
+
+14. Write a program to print odd even numbers using threads in sequence?
+
+Here is the program to print odd and even numbers using threads in sequence.
+
+15. Which design pattern you have used in your project?
+
+You can name few design patterns such as Singleton, Observer etc. which you might have used in your project.
+
+16. What is double level locking in singleton design pattern?
+
+Double level locking in single design pattern is used to make it thread-safe.
+
+public static Singleton getInstance()
+	{ 
+		if (_instance == null) { // Single Checked 
+			synchronized (Singleton.class) 
+			{ 
+				if (_instance == null)// Double checked 
+				{ 
+					_instance = new Singleton(); 
+				}
+			} 
+		} return _instance; 
+	}
+Let’s say two threads(T1 and T2) checked for null and both reached at synchronized (Singleton.class) . T1 gets the lock and create instance of Singleton and return.Now T2 enters in synchronized block, as we have checked for null again,it will not create object again.
+
+17. Write a program to implement producer-consumer problem using BlockingQueue?
+
+You can find detailed answer over here
+
+18. Have you worked on Java 8? Can you share major changes in Java 8?
+
+If you have worked on Java 8, you can share major changes such Stream, lambada expression, defaults method in interface etc.
+
+19. Have you worked on Serialization? Can you tell difference between Serializable and Externalizable?
+
+You can find detailed answer over here
+
+20. How will you detect memory leak in your application?
+
+There is no simple answer to this question. You can take thread dump via JVisualVM and do the analysis in eclipse memory analyzer tool.
+
+Below are some frequently asked questions.
+
+What is oops?
+
+what is encapsulation ? examples of encapsulation in java
+
+string reference and string literal difference?
+
+string constant pool and string immutability
+
+simple program to remove duplicate elements from an array.
+
+steps to establish jdbc connection ?
+
+What is abstraction ?
+
+what are abstract classes?
+
+Is it possible to create object for abstract classes?
+
+what are interfaces?
+
+why we can’t extend two or more classes in java?
+
+explain diamond problem ?
+
+what is static block and use of it?
+
+what is constructor chaining?
+
+what are the different steps to create an object for an class?
+
+what is polymorphisom?
+
+what are the methods accessible by parent reference of an child object ?
+
+properties of list,set and map
+
+how does hashing algorithm works?
+
+how does hashset avoids duplicates?
+difference between List and vector?
+
+how and when when to override equals and hashcode method?
+
+what is the use of comparator interfaces?
+
+difference between compertor and compareble interfaces?
+
+custom sorting
+
+how does treeset or treemap sorting works
+
+difference between wait and suspend and sleep methods
+
+what is dead lock?
+
+how can we make a thread to return some value
+
+race condition and sychronized key word
+
+difference between synchronozation and serialization
+
+what is an maker interface?
+
+can we have try block and finally without catch block?
+
+difference between throws and throw keyword
+
+difference between checked and unchecked exceptionwith examples
+
+use of final,finally and finalize keyword
+
+How does same JAVA code run on multiple Operating System ?
+--> On the face of it , It may look very simple but sometimes the interviewer is looking in depth knowledge and understanding of the candidate. In this answer explaing by giving analogies. Take a C program and compare it with a java program. What are the different compiling stages, compare them. This question can even go into the architecture of JVM.
+
+2) What does the final keyword do ?
+--> Do they differ from constants in C, C++ ?  ( Yes they do.  Because final values are not known at compile time.) List other uses of final too.
+
+3) Difference between interface and Abstract class.
+--> This can go into deisgning and OOPS.
+
+
+Diff Btw Inner Class and Sub Class
+
+◆Purpose of Static method and Static variable*
+
+◆What is Singleton Class
+
+◆Diff Btw Continue and Break
+
+◆Final Keyword in Java
+
+◆What is JIT Compiler
+
+◆What Gives Java it's ‘Write once and run everywhere‘ nature
+
+◆ Purpose of Default Constructor
+
+◆What is Class Loader
+
+◆What is Inheritance
+
+◆What is Super in Java
+
+◆What is Object Cloning
+
+◆What is Method Overriding
+
+◆Static Binding and Dynamic Binding
+
+◆What is Interface
+
+◆What Is Exception Handling
+
+◆Can FInally block be used without Catch
+
+◆Can the Interface be Final
+
+◆Diff Btw Throw and Throws
+
+◆Diff Btw String and String Buffer
+
+◆What is Serialization
+
+◆What is Synchronization
+
+◆ What is Garbage Collection.
+
+◆Diff Btw Final, FInally and Finalize
+
+◆Various Access Specifier in Java and their Field
+
+◆Diff Btw Array and Vector
+
+◆Why dnt we have Destructors in Java
+
+◆What is Object and how it is stored in Java
+
+◆Which is the Base class for all Exception class
+
+◆Btw JDK, JRE, JVM
+
+What is object orientation ?
+
+Explain OOps concepts
+
+Basic package related question like this class (Stsytem Exception etc)belong from which packages .
+
+Why java is platefrom independent ?
+
+Java exceptions like cutom exceptions try catch finaly block .
+
+Difference between inheritance abstractions interfaces .
+
+Serialization
+
+How does hashmap word
+
+Full collection topic are important
+
+Multithreading like sleep join and creation of thread
+
+String buffer , string and string builder
+
+Java Data base connectivity
+What is immutable object? Can you write immutable object?
+
+2. What is the difference when String is gets created using literal or new() operator?
+
+3. Define JAXB & JAXP?
+
+4. Which two method you need to implement for key Object in HashMap?
+
+5. Do you think all property of Immutable Object needs to be final?
+
+6. Can you quickly brief about Map, HashMap, HashTable, and TreeMap?
+
+7. What is the difference between Executor.submit() and Executer.execute() method?
+
+8. Does overriding hashcode() method have any performance implication?
+
+9. Can you differentiate an Interface and an Abstract class?
+
+10. What is the difference between HashSet and TreeSet?
+
+◆What is Final class
+
+What is bytecode?
+What is the work of JVM?
+Why JAVA is called robust?
+Can you successfully compile and run a JAVA program without main()?
+Explain public static void main(String args[])?
+What is extend keyword in JAVA?
+What are wrapper classes?
+What is out in System.out.print()?
+What is the difference between abstract class and interface?
+Why cannot you instantiate an abstract class?
+What is exception handling?
+What is finally keyword?
+What if I use final keyword before an integer variable in JAVA? //Ex: final int=5;
+What is a thread?
+What is the use of multi-threading?
+Which keyword is used to create an object in JAVA?
+What is the use of this keyword?
+What is inner class in Java?
