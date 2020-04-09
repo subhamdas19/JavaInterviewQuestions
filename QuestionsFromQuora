@@ -5,7 +5,18 @@ https://www.journaldev.com/2366/core-java-interview-questions-and-answers
 https://www.javatpoint.com/corejava-interview-questions
 https://www.edureka.co/blog/interview-questions/java-interview-questions/
 
+Why main method is public static and void in Java?
+What is main method in Java and why main is static in Java
+This is very famous core Java interview question, and appeared on many fresher and experience level interviews. Though ever java programmer uses main method not every one is familiar with reason why main is static or why main is public in Java. Here are few reasons which make sense to me to think of Why main is public, static and void in java
 
+main method in Java is public so that its visible to every other class, even which are not part of its package. if its not public JVM classes might not able to access it.
+
+main method is static in Java, so that it can be called without creating any instance. While JVM tries to execute Java program it doesn't know how to create instance of  main class as there is no standard constructor is defined for main class.
+
+main method is void in Java because it doesn't return any thing to caller which is JVM .
+
+
+Read more: https://www.java67.com/2012/08/what-is-main-method-in-java-why-main-is.html#ixzz6J7kYQJLx
 
 
 1.Why is Java termed as platform independent?
