@@ -16,6 +16,7 @@ static:so that JVM doesnt have to create an object to access the main()
 void:no return type
 main:JVM can recognize only this signature
 string[] args:run time arguements.
+diffrenece between final,finally and finalize()
 
 
 
