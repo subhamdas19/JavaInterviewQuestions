@@ -10,6 +10,15 @@ Important side links
 https://www.geeksforgeeks.org/java-platform-independent/
 https://www.geeksforgeeks.org/java-and-multiple-inheritance/(see only grandparent eg.rest u can do multiple inheritance with interface
 https://javahungry.blogspot.com/2018/10/difference-between-path-and-classpath-in-java.html
+public static vod maim(String[] args)
+public;so that any class can access it from anywhere and JVM classes like from any package
+static:so that JVM doesnt have to create an object to access the main()
+void:no return type
+main:JVM can recognize only this signature
+string[] args:run time arguements.
+
+
+
 
 
 
